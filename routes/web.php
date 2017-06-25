@@ -17,8 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['prefix'=> 'object','middleware'=>'auth'], function(){
 	Route::get('/', 'ObjectController@index' );
 	Route::get('/create', 'ObjectController@create' );
