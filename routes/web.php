@@ -32,6 +32,8 @@ Route::group(['prefix'=> 'tag','middleware'=>'auth'], function(){
 });
 
 Route::group(['prefix'=> 'link','middleware'=>'auth'], function(){
+	Route::get('/create', 'LinkController@create' );
 	Route::get('/{link}/edit', 'LinkController@edit' );
+	Route::post('/', 'LinkController@new' );
 	Route::patch('/{link}', 'LinkController@update' );
 });

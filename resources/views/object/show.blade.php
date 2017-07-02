@@ -23,5 +23,6 @@
 		@endforeach
 	</div>
 
+	<a href="/link/create" class="button">New Link</a>
 	<a href="/object" class="button">All Objects</a>
 @stop
