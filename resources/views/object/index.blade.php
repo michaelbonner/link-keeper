@@ -8,7 +8,9 @@
 			@foreach( $objects as $key => $object )
 				<div class="column is-one-quarter">
 					<a href="/object/{{ $object->slug }}"><img src="{{ $object->featured_image }}" alt="{{ $object->title }}"></a>
-					<a href="/object/{{ $object->slug }}"><h3 class="title">{{ $object->title }}</h3></a>
+					<h3 class="title">
+						<a href="/object/{{ $object->slug }}">{{ $object->title }}</a>
+					</h3>
 					<p>{{ $object->description }}</p>
 					<a href="/object/{{ $object->slug }}" class="button">View Links</a>
 				</div>

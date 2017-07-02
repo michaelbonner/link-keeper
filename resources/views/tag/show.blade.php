@@ -4,8 +4,7 @@
 
 @section('content')
 	<h2 class="title">{{ $tag->name }} Links:</h2>
-
-	<h3 class="subtitle">Links:</h3>
+	
 	<div class="columns is-multiline">
 		@foreach( $links as $key => $link )
 			@if( $link->type != 'index' )
