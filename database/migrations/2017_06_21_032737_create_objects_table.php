@@ -20,6 +20,7 @@ class CreateObjectsTable extends Migration
 				->references('id')->on('users')
 				->onDelete('cascade');
 			$table->string('title');
+			$table->string('slug');
 			$table->text('description');
 			$table->string('featured_image');
 			$table->timestamps();

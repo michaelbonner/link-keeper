@@ -7,6 +7,11 @@ use App\Models\{Link,Object};
 
 class Object extends Model
 {
+
+	public function getRouteKeyName(){
+		return 'slug';
+	}
+
 	public function links(){
 		return $this->hasMany('App\Models\Link');
 	}

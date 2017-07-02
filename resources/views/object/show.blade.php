@@ -3,9 +3,9 @@
 @section('title', $object->title )
 
 @section('content')
-	<h2>Links:</h2>
+	<h2 class="title">{{ $object->title }} Links:</h2>
 
-	<h3>Indexes:</h3>
+	<h3 class="subtitle">Indexes:</h3>
 	<div class="columns is-multiline">
 		@foreach( $links as $key => $link )
 			@if( $link->type == 'index' )
@@ -14,7 +14,7 @@
 		@endforeach
 	</div>
 
-	<h3>Singles:</h3>
+	<h3 class="subtitle">Singles:</h3>
 	<div class="columns is-multiline">
 		@foreach( $links as $key => $link )
 			@if( $link->type != 'index' )
