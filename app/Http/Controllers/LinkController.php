@@ -29,10 +29,6 @@ class LinkController extends Controller
 	}
 
 	public function update( Link $link ){
-		if( ! Auth::user()->objects->pluck('id')->contains( $link->id ) ){
-			return 'oh boy, you did something bad';
-		}
-
 		$link->tags()->sync( array_values( request()->tag ) );
 
 		$link->update(request()->except('tag'));
