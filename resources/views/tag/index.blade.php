@@ -3,13 +3,10 @@
 @section('title', 'Link Index')
 
 @section('content')
+	<h1 class="title">All tags:</h1>
 	@if( $tags->count() )
-		<div class="columns is-multiline">
-			@foreach( $tags as $key => $tag )
-				<div class="column is-one-quarter">
-					<a href="/tag/{{ $tag->slug }}"><h3>{{ $tag->name }}</h3></a>
-				</div>
-			@endforeach
-		</div>
+		@foreach( $tags as $tag )
+			<a class="tag" href="/tag/{{ $tag->slug }}">{{ $tag->name }}</a>
+		@endforeach
 	@endif
 @stop
