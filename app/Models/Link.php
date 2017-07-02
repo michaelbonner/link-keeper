@@ -7,6 +7,8 @@ use App\Models\Object;
 
 class Link extends Model
 {
+	protected $guarded = [];
+	
 	public function object(){
 		return $this->belongsTo('App\Models\Object');
 	}
