@@ -5,6 +5,8 @@
 @section('content')
 	<h2 class="title">{{ $object->title }} Links:</h2>
 
+	<p>{{ $object->description }}</p>
+
 	<h3 class="subtitle">Indexes:</h3>
 	<div class="columns is-multiline">
 		@foreach( $links as $key => $link )

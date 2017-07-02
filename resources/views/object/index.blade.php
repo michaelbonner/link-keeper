@@ -11,7 +11,6 @@
 					<h3 class="title">
 						<a href="/object/{{ $object->slug }}">{{ $object->title }}</a>
 					</h3>
-					<p>{{ $object->description }}</p>
 					<a href="/object/{{ $object->slug }}" class="button">View Links</a>
 				</div>
 			@endforeach

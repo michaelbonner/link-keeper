@@ -13,7 +13,7 @@ class ObjectController extends Controller
 
 	public function index()
 	{
-		$objects = Auth::user()->objects;
+		$objects = Auth::user()->objects->sortBy('title');
 		return view('object.index', compact( 'objects' ) );
 	}
 
