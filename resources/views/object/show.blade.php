@@ -23,5 +23,5 @@
 		@endforeach
 	</div>
 
-	<a href="/object" class="button">Back</a>
+	<a href="/object" class="button">All Objects</a>
 @stop
