@@ -12,8 +12,8 @@ class LinkController extends Controller
 {
 
 	public function create(){
-		$objects = Object::all();
-		$tags = Tag::all();
+		$objects = Object::orderBy('title')->get();
+		$tags = Tag::orderBy('name')->get();
 		return view('link.create', compact( 'objects', 'tags' ) );
 	}
 
@@ -24,7 +24,7 @@ class LinkController extends Controller
 	}
 
 	public function edit( Link $link ){
-		$tags = Tag::all();
+		$tags = Tag::orderBy('name')->get();
 		return view('link.edit', compact( 'link', 'tags' ) );
 	}
 
