@@ -17,6 +17,7 @@ class LinksTableSeeder extends Seeder
 			'object_id' => $object->id,
 			'url' => 'https://www.linkedin.com/in/michaelbonner',
 			'comment' => 'LinkedIn Profile',
+			'type' => 'single',
 			'thumbnail' => 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAdiAAAAJDM1ZGEwM2Q4LWM1ZTktNGFmMy1hNTljLTFiNjBkYTBlZDZiOQ.jpg',
 		]);
     }
