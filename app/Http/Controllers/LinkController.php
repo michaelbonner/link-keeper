@@ -29,7 +29,7 @@ class LinkController extends Controller
 	}
 
 	public function update( Link $link ){
-		if( ! Auth::user()->objects->contains( $link->id ) ){
+		if( ! Auth::user()->objects->pluck('id')->contains( $link->id ) ){
 			return 'oh boy, you did something bad';
 		}
 
