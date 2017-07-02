@@ -9,7 +9,7 @@
 	<div class="columns is-multiline">
 		@foreach( $links as $key => $link )
 			@if( $link->type == 'index' )
-				@component('components.simple-image-link', compact( 'link' )) @endcomponent
+				@component('components.simple-image-link', compact( 'link', 'is_tag' )) @endcomponent
 			@endif
 		@endforeach
 	</div>
@@ -18,7 +18,7 @@
 	<div class="columns is-multiline">
 		@foreach( $links as $key => $link )
 			@if( $link->type != 'index' )
-				@component('components.simple-image-link', compact( 'link' )) @endcomponent
+				@component('components.simple-image-link', compact( 'link', 'is_tag' )) @endcomponent
 			@endif
 		@endforeach
 	</div>

@@ -19,7 +19,8 @@ class TagController extends Controller
 
 	public function show( Tag $tag )
 	{
+		$is_tag = true;
 		$links = $tag->links->sortBy('comment');
-		return view('tag.show', compact( 'tag', 'links' ) );
+		return view('tag.show', compact( 'tag', 'links', 'is_tag' ) );
 	}
 }
