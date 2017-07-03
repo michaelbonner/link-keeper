@@ -13,14 +13,15 @@ class ObjectController extends Controller
 
 	public function index()
 	{
-		$objects = Auth::user()->objects->sortBy('title');
+		$objects = Auth::user()->objects()->orderBy('title')->get();
 		return view('object.index', compact( 'objects' ) );
 	}
 
 	public function show( Object $object )
 	{
-		$links = $object->links->sortBy('comment');
-		return view('object.show', compact( 'object', 'links' ) );
+		$index_links = $links = $object->links()->where('type','index')->orderBy('comment')->get();
+		$single_links = $links = $object->links()->where('type','!=','index')->orderBy('comment')->get();
+		return view('object.show', compact( 'object', 'index_links', 'single_links' ) );
 	}
 
 	public function create(){

@@ -17,18 +17,23 @@
 
 	<form action="/link" method="post">
 
-		<div class="field">
-			<label class="label">Object</label>
-			<p class="control">
-				<span class="select">
-					<select name="object_id">
-						@foreach( $objects as $object )
-							<option value="{{ $object->id }}">{{ $object->title }}</option>
-						@endforeach
-					</select>
-				</span>
-			</p>
-		</div>
+		@if( request()->has('object') )
+			<input type="hidden" name="object" value="{{ request()->object }}">
+		@else
+			<div class="field">
+				<label class="label">Object</label>
+				<p class="control">
+					<span class="select">
+						<select name="object_id">
+							@foreach( $objects as $object )
+								<option value="{{ $object->id }}" @if( old('object_id') == $object->id ) selected="selected" @endif>{{ $object->title }}</option>
+								@endforeach
+							</select>
+						</span>
+					</p>
+				</div>
+		@endif
+
 
 		<div class="field">
 			<label class="label">Comment</label>
@@ -60,17 +65,21 @@
 			</p>
 		</div>
 
-		<div class="field">
-			<label class="label">Type</label>
-			<p class="control">
-				<span class="select">
-					<select name="type">
-						<option value="index" >Index</option>
-						<option value="single">Single</option>
-					</select>
-				</span>
-			</p>
-		</div>
+		@if( request()->has('type') )
+			<input type="hidden" name="type" value="{{ request()->type }}">
+		@else
+			<div class="field">
+				<label class="label">Type</label>
+				<p class="control">
+					<span class="select">
+						<select name="type">
+							<option value="index" >Index</option>
+							<option value="single">Single</option>
+						</select>
+					</span>
+				</p>
+			</div>
+		@endif
 
 		<div class="field">
 			<p class="control">
