@@ -3,7 +3,7 @@
 @section('title', $link->title )
 
 @section('content')
-	<h2 class="title">Edit:</h2>
+	<h2 class="title">Edit Link:</h2>
 
 	<form action="/link/{{ $link->id }}" method="post">
 
@@ -77,11 +77,6 @@
 
 	</form>
 
-	<hr>
-
-	<p>
-		<a href="/link/delete/{{ $link->id }}" class="button is-danger is-outlined">Delete Link</a>
-		<a href="/object" class="button">All Objects</a>
-	</p>
+	<a href="/link/delete/{{ $link->id }}" class="button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Link</a>
 
 @stop

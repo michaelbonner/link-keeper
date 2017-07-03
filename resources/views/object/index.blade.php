@@ -18,10 +18,4 @@
 			@endforeach
 		</div>
 	@endif
-
-	<hr>
-	
-	<p>
-		<a href="/object/create" class="button">New Object</a>
-	</p>
 @stop

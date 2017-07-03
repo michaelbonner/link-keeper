@@ -28,7 +28,11 @@ Route::group(['prefix'=> 'object','middleware'=>'auth'], function(){
 
 Route::group(['prefix'=> 'tag','middleware'=>'auth'], function(){
 	Route::get('/', 'TagController@index' );
+	Route::get('/create', 'TagController@create' );
 	Route::get('/{tag}', 'TagController@show' );
+	Route::post('/', 'TagController@store' );
+	Route::patch('/{tag}', 'TagController@update' );
+	Route::get('/delete/{tag}', 'TagController@destroy' );
 });
 
 Route::group(['prefix'=> 'link','middleware'=>'auth'], function(){

@@ -13,6 +13,5 @@
 		@endforeach
 	</div>
 
-	<a href="/tag" class="button">All Tags</a>
-	<a href="/object" class="button">All Objects</a>
+	<a href="/tag/delete/{{ $tag->slug }}" class="button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Tag</a>
 @stop

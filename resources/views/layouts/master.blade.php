@@ -8,6 +8,17 @@
 		<div class="section">
 			<div class="container">
 				@yield('content')
+
+				<hr>
+
+				<p class="footer-buttons">
+					<a href="/object" class="button"><i class="fa fa-home" aria-hidden="true"></i> All Objects</a>
+					<a href="/tag" class="button"><i class="fa fa-tags" aria-hidden="true"></i> All Tags</a>
+					<a href="/object/create" class="button"><i class="fa fa-plus" aria-hidden="true"></i> New Object</a>
+					<a href="/link/create" class="button"><i class="fa fa-plus" aria-hidden="true"></i> New Link</a>
+					<a href="/tag/create" class="button"><i class="fa fa-tag" aria-hidden="true"></i> New Tag</a>
+				</p>
+
 			</div>
 		</div>
 	</body>

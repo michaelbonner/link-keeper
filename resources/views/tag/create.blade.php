@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'Add New Object')
+@section('title', 'Add New Tag')
 
 @section('content')
-	<h2 class="title">Add New Object:</h2>
+	<h2 class="title">Add New Tag:</h2>
 
 	@if ($errors->any())
 		<div class="notification is-danger">
@@ -15,12 +15,12 @@
 		</div>
 	@endif
 
-	<form action="/object" method="post">
+	<form action="/tag" method="post">
 
 		<div class="field">
-			<label class="label">Title</label>
+			<label class="label">Name</label>
 			<p class="control has-icons-left has-icons-right">
-				<input class="input" type="text" placeholder="Title" name="title" value="{{ old('title') }}">
+				<input class="input" type="text" placeholder="Name" name="name" value="{{ old('name') }}">
 				<span class="icon is-small is-left">
 					<i class="fa fa-pencil"></i>
 				</span>
@@ -33,23 +33,6 @@
 				<input class="input" type="text" placeholder="Slug" name="slug" value="{{ old('slug') }}">
 				<span class="icon is-small is-left">
 					<i class="fa fa-pencil"></i>
-				</span>
-			</p>
-		</div>
-
-		<div class="field">
-			<label class="label">Description</label>
-			<p class="control">
-				<textarea class="textarea" placeholder="Description..." name="description">{{ old('description') }}</textarea>
-			</p>
-		</div>
-
-		<div class="field">
-			<label class="label">Featured Image URL</label>
-			<p class="control has-icons-left has-icons-right">
-				<input class="input" type="text" placeholder="Featured Image URL" name="featured_image" value="{{ old('featured_image') }}">
-				<span class="icon is-small is-left">
-					<i class="fa fa-photo"></i>
 				</span>
 			</p>
 		</div>

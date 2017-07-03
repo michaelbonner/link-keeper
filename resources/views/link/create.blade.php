@@ -3,7 +3,7 @@
 @section('title', 'Create a new link' )
 
 @section('content')
-	<h2 class="title">Edit:</h2>
+	<h2 class="title">Add New Link:</h2>
 
 	@if ($errors->any())
 		<div class="notification is-danger">
@@ -97,8 +97,4 @@
 		{{ csrf_field() }}
 
 	</form>
-
-	<hr>
-
-	<a href="/object" class="button">All Objects</a>
 @stop

@@ -23,4 +23,23 @@ class TagController extends Controller
 		$links = $tag->links->sortBy('comment');
 		return view('tag.show', compact( 'tag', 'links', 'is_tag' ) );
 	}
+
+	public function create(){
+		return view('tag.create');
+	}
+
+	public function store(){
+		$this->validate( request(), [
+			'name' => 'required',
+			'slug' => 'required',
+		]);
+
+		$tag = Tag::create( request()->all() );
+		return redirect('/tag');
+	}
+
+	public function destroy( Tag $tag ){
+		$tag->delete();
+		return redirect( '/tag' );
+	}
 }
