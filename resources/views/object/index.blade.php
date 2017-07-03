@@ -17,5 +17,7 @@
 				</div>
 			@endforeach
 		</div>
+	@else
+		No objects found. <a href="/object/create">Create one now</a> to get started.
 	@endif
 @stop
