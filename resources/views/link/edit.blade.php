@@ -77,6 +77,7 @@
 
 	</form>
 
-	<a href="/link/delete/{{ $link->id }}" class="button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Link</a>
+	<a href="#" class="hidden-delete-toggle button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Link</a>
+	<a href="/link/delete/{{ $link->id }}" class="hidden-delete button is-danger is-outlined">Really Delete Link</a>
 
 @stop

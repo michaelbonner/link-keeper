@@ -25,5 +25,6 @@
 		@endforeach
 	</div>
 
-	<a href="/object/delete/{{ $object->slug }}" class="button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Object</a>
+	<a href="#" class="hidden-delete-toggle button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Object</a>
+	<a href="/object/delete/{{ $object->slug }}" class="hidden-delete button is-danger is-outlined">Really Delete Object</a>
 @stop

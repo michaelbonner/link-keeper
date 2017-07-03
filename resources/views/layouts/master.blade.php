@@ -3,6 +3,11 @@
 		<title>@yield('title') | Link Keeper</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style media="screen">
+			.hidden-delete {
+				display: none;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="section">
@@ -21,5 +26,18 @@
 
 			</div>
 		</div>
+
+		<script
+			src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script>
+		<script>
+			$(function(){
+				$('.hidden-delete-toggle').click(function(e){
+					e.preventDefault();
+					$('.hidden-delete-toggle, .hidden-delete').toggle();
+				});
+			});
+		</script>
 	</body>
 </html>
