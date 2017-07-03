@@ -13,7 +13,7 @@
 		@endforeach
 	</div>
 
-	<a href="#" class="hidden-delete-toggle button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Tag</a>
+	<a href="#" class="hidden-delete-toggle">Delete Tag</a>
 	<a href="/tag/delete/{{ $tag->slug }}" class="hidden-delete button is-danger is-outlined">Really Delete Tag</a>
 
 @stop

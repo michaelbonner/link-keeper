@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', $link->title )
+@section('title', 'Edit ' . $link->comment )
 
 @section('content')
 	<h2 class="title">Edit Link:</h2>
@@ -77,7 +77,7 @@
 
 	</form>
 
-	<a href="#" class="hidden-delete-toggle button is-danger is-outlined"><i class="fa fa-times" aria-hidden="true"></i> Delete Link</a>
+	<a href="#" class="hidden-delete-toggle">Delete Link</a>
 	<a href="/link/delete/{{ $link->id }}" class="hidden-delete button is-danger is-outlined">Really Delete Link</a>
 
 @stop
