@@ -7,7 +7,9 @@
 		<div class="columns is-multiline">
 			@foreach( $objects as $key => $object )
 				<div class="column is-one-quarter">
-					<a href="/object/{{ $object->slug }}"><img src="{{ $object->featured_image }}" alt="{{ $object->title }}"></a>
+					@if( $object->featured_image )
+						<a href="/object/{{ $object->slug }}"><img src="{{ $object->featured_image }}" alt="{{ $object->title }}"></a>
+					@endif
 					<h3 class="title">
 						<a href="/object/{{ $object->slug }}">{{ $object->title }}</a>
 					</h3>
@@ -16,4 +18,10 @@
 			@endforeach
 		</div>
 	@endif
+
+	<hr>
+	
+	<p>
+		<a href="/object/create" class="button">New Object</a>
+	</p>
 @stop

@@ -8,6 +8,8 @@ use App\Models\{Link,Object};
 class Object extends Model
 {
 
+	protected $guarded = [];
+
 	public function getRouteKeyName(){
 		return 'slug';
 	}

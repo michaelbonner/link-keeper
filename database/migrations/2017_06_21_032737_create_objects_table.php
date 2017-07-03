@@ -21,8 +21,8 @@ class CreateObjectsTable extends Migration
 				->onDelete('cascade');
 			$table->string('title');
 			$table->string('slug');
-			$table->text('description');
-			$table->string('featured_image');
+			$table->text('description')->nullable();
+			$table->string('featured_image')->nullable();
 			$table->timestamps();
 		});
 	}

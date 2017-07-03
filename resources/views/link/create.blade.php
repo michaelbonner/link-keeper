@@ -5,6 +5,16 @@
 @section('content')
 	<h2 class="title">Edit:</h2>
 
+	@if ($errors->any())
+		<div class="notification is-danger">
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		</div>
+	@endif
+
 	<form action="/link" method="post">
 
 		<div class="field">
@@ -23,7 +33,7 @@
 		<div class="field">
 			<label class="label">Comment</label>
 			<p class="control has-icons-left has-icons-right">
-				<input class="input" type="text" placeholder="Comment" name="comment">
+				<input class="input" type="text" placeholder="Comment" name="comment" value="{{ old('comment') }}">
 				<span class="icon is-small is-left">
 					<i class="fa fa-pencil"></i>
 				</span>
@@ -33,7 +43,7 @@
 		<div class="field">
 			<label class="label">Thumbnail</label>
 			<p class="control has-icons-left has-icons-right">
-				<input class="input" type="text" placeholder="Thumbnail" name="thumbnail">
+				<input class="input" type="text" placeholder="Thumbnail" name="thumbnail" value="{{ old('thumbnail') }}">
 				<span class="icon is-small is-left">
 					<i class="fa fa-photo"></i>
 				</span>
@@ -43,7 +53,7 @@
 		<div class="field">
 			<label class="label">URL</label>
 			<p class="control has-icons-left has-icons-right">
-				<input class="input" type="text" placeholder="URL" name="url">
+				<input class="input" type="text" placeholder="URL" name="url" value="{{ old('url') }}">
 				<span class="icon is-small is-left">
 					<i class="fa fa-link"></i>
 				</span>

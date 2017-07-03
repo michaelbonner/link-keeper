@@ -21,8 +21,8 @@ class CreateLinksTable extends Migration
 				->onDelete('cascade');
 			$table->string('url');
 			$table->string('type');
-			$table->string('comment');
-			$table->string('thumbnail');
+			$table->string('comment')->nullable();
+			$table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

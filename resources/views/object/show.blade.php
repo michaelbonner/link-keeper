@@ -25,6 +25,9 @@
 		@endforeach
 	</div>
 
-	<a href="/link/create" class="button">New Link</a>
-	<a href="/object" class="button">All Objects</a>
+	<p>
+		<a href="/link/create" class="button">New Link</a>
+		<a href="/object" class="button">All Objects</a>
+		<a href="/object/delete/{{ $object->slug }}" class="button is-danger is-outlined">Delete Object</a>
+	</p>
 @stop

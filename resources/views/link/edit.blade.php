@@ -79,5 +79,9 @@
 
 	<hr>
 
-	<a href="/object" class="button">All Objects</a>
+	<p>
+		<a href="/link/delete/{{ $link->id }}" class="button is-danger is-outlined">Delete Link</a>
+		<a href="/object" class="button">All Objects</a>
+	</p>
+
 @stop

@@ -17,9 +17,14 @@ class LinkController extends Controller
 		return view('link.create', compact( 'objects', 'tags' ) );
 	}
 
-	public function new(){
+	public function store(){
+		$this->validate( request(), [
+			'url' => 'required|url',
+			'type' => 'required',
+		]);
+
 		$link = Link::create( request()->except('tag') );
-		$link->tags()->sync( array_values( request()->tag ) );
+		if( request()->has('tag') ) $link->tags()->sync( array_values( request()->tag ) );
 		return redirect( '/object/' . $link->object->slug );
 	}
 
@@ -29,9 +34,15 @@ class LinkController extends Controller
 	}
 
 	public function update( Link $link ){
-		$link->tags()->sync( array_values( request()->tag ) );
+		$tags = request()->has('tag') ? array_values( request()->tag ) : [];
+		$link->tags()->sync( $tags );
 
 		$link->update(request()->except('tag'));
+		return redirect( '/object/' . $link->object->slug );
+	}
+
+	public function destroy( Link $link ){
+		$link->delete();
 		return redirect( '/object/' . $link->object->slug );
 	}
 }
