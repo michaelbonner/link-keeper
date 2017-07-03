@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TagsLinksSeeder extends Seeder
+class LinkTagSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
@@ -14,6 +14,6 @@ class TagsLinksSeeder extends Seeder
 		$tag = App\Models\Tag::first();
 		$link = App\Models\Link::first();
 
-		
+		$link->tags()->sync( [ $tag->id ] );
 	}
 }
