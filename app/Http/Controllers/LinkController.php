@@ -23,7 +23,13 @@ class LinkController extends Controller
 			'type' => 'required',
 		]);
 
-		$link = Link::create( request()->except('tag') );
+		$link = Link::create([
+			'object_id' => request()->object,
+			'url' => request()->url,
+			'type' => request()->type,
+			'comment' => request()->comment,
+			'thumbnail' => request()->thumbnail,
+		]);
 		if( request()->has('tag') ) $link->tags()->sync( array_values( request()->tag ) );
 		return redirect( '/object/' . $link->object->slug );
 	}
