@@ -33,6 +33,15 @@ class ObjectController extends Controller
 		return redirect('/object');
 	}
 
+	public function edit( Object $object ){
+		return view('object.edit', compact( 'object' ) );
+	}
+
+	public function update( Object $object ){
+		$object->update( request()->all() );
+		return redirect( '/object/' . $object->slug );
+	}
+
 	public function store(){
 		$this->validate( request(), [
 			'title' => 'required',

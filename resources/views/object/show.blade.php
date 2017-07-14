@@ -47,4 +47,7 @@
 		<a href="#" class="hidden-delete-toggle">Delete Object</a>
 		<a href="/object/delete/{{ $object->slug }}" class="hidden-delete button is-danger is-outlined">Really Delete Object</a>
 	</p>
+	<p>
+		<a href="/object/{{ $object->slug }}/edit">Edit</a>
+	</p>
 @stop

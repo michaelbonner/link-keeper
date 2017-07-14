@@ -20,6 +20,7 @@ Auth::routes();
 Route::group(['prefix'=> 'object','middleware'=>'auth'], function(){
 	Route::get('/', 'ObjectController@index' );
 	Route::get('/create', 'ObjectController@create' );
+	Route::get('/{object}/edit', 'ObjectController@edit' );
 	Route::get('/{object}', 'ObjectController@show' );
 	Route::post('/', 'ObjectController@store' );
 	Route::patch('/{object}', 'ObjectController@update' );
