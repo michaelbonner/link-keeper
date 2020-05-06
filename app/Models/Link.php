@@ -3,17 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Object;
+use App\Models\Subject;
 
 class Link extends Model
 {
 	protected $guarded = [];
-	
-	public function object(){
-		return $this->belongsTo('App\Models\Object');
+
+	public function subject()
+	{
+		return $this->belongsTo(Subject::class);
 	}
 
-	public function tags(){
-		return $this->belongsToMany('App\Models\Tag');
+	public function tags()
+	{
+		return $this->belongsToMany(Tag::class);
 	}
 }

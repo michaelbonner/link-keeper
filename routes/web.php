@@ -12,34 +12,34 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Auth::routes();
 
-Route::group(['prefix'=> 'object','middleware'=>'auth'], function(){
-	Route::get('/', 'ObjectController@index' );
-	Route::get('/create', 'ObjectController@create' );
-	Route::get('/{object}/edit', 'ObjectController@edit' );
-	Route::get('/{object}', 'ObjectController@show' );
-	Route::post('/', 'ObjectController@store' );
-	Route::patch('/{object}', 'ObjectController@update' );
-	Route::get('/delete/{object}', 'ObjectController@destroy' );
+Route::group(['prefix' => 'subject', 'middleware' => 'auth'], function () {
+	Route::get('/', 'SubjectController@index');
+	Route::get('/create', 'SubjectController@create');
+	Route::get('/{subject}/edit', 'SubjectController@edit');
+	Route::get('/{subject}', 'SubjectController@show');
+	Route::post('/', 'SubjectController@store');
+	Route::patch('/{subject}', 'SubjectController@update');
+	Route::get('/delete/{subject}', 'SubjectController@destroy');
 });
 
-Route::group(['prefix'=> 'tag','middleware'=>'auth'], function(){
-	Route::get('/', 'TagController@index' );
-	Route::get('/create', 'TagController@create' );
-	Route::get('/{tag}', 'TagController@show' );
-	Route::post('/', 'TagController@store' );
-	Route::patch('/{tag}', 'TagController@update' );
-	Route::get('/delete/{tag}', 'TagController@destroy' );
+Route::group(['prefix' => 'tag', 'middleware' => 'auth'], function () {
+	Route::get('/', 'TagController@index');
+	Route::get('/create', 'TagController@create');
+	Route::get('/{tag}', 'TagController@show');
+	Route::post('/', 'TagController@store');
+	Route::patch('/{tag}', 'TagController@update');
+	Route::get('/delete/{tag}', 'TagController@destroy');
 });
 
-Route::group(['prefix'=> 'link','middleware'=>'auth'], function(){
-	Route::get('/create', 'LinkController@create' );
-	Route::get('/{link}/edit', 'LinkController@edit' );
-	Route::post('/', 'LinkController@store' );
-	Route::patch('/{link}', 'LinkController@update' );
-	Route::get('/delete/{link}', 'LinkController@destroy' );
+Route::group(['prefix' => 'link', 'middleware' => 'auth'], function () {
+	Route::get('/create', 'LinkController@create');
+	Route::get('/{link}/edit', 'LinkController@edit');
+	Route::post('/', 'LinkController@store');
+	Route::patch('/{link}', 'LinkController@update');
+	Route::get('/delete/{link}', 'LinkController@destroy');
 });

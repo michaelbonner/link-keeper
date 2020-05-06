@@ -15,14 +15,14 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->increments('id');
-			$table->unsignedInteger('object_id');
-			$table->foreign('object_id')
-				->references('id')->on('objects')
-				->onDelete('cascade');
-			$table->string('url');
-			$table->string('type');
-			$table->string('comment')->nullable();
-			$table->string('thumbnail')->nullable();
+            $table->unsignedInteger('subject_id');
+            $table->foreign('subject_id')
+                ->references('id')->on('subjects')
+                ->onDelete('cascade');
+            $table->string('url');
+            $table->string('type');
+            $table->string('comment')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }
