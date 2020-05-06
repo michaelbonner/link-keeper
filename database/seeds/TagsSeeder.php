@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Str;
 use App\Models\Tag;
 
 class TagsSeeder extends Seeder
@@ -14,8 +14,8 @@ class TagsSeeder extends Seeder
 	public function run()
 	{
 		$tag = Tag::create([
-			'name' => str_random(10),
-			'slug' => str_random(10)
+			'name' => Str::random(10),
+			'slug' => Str::random(10)
 		]);
 	}
 }
