@@ -13,33 +13,48 @@ class TagController extends Controller
 
 	public function index()
 	{
-		$tags = Tag::orderBy('name')->get();
-		return view('tag.index', compact( 'tags' ) );
+		$tags = request()->user()->tags()->orderBy('name')->get();
+		return view('tag.index', compact('tags'));
 	}
 
-	public function show( Tag $tag )
+	public function show($tag)
 	{
 		$is_tag = true;
-		$links = $tag->links->sortBy('comment');
-		return view('tag.show', compact( 'tag', 'links', 'is_tag' ) );
+		$tag = $links = request()
+			->user()
+			->tags()
+			->where('slug', $tag)
+			->firstOrFail();
+		$links = $tag
+			->links
+			->sortBy('comment');
+		return view('tag.show', compact('tag', 'links', 'is_tag'));
 	}
 
-	public function create(){
+	public function create()
+	{
 		return view('tag.create');
 	}
 
-	public function store(){
-		$this->validate( request(), [
+	public function store()
+	{
+		$this->validate(request(), [
 			'name' => 'required',
 			'slug' => 'required',
 		]);
 
-		$tag = Tag::create( request()->all() );
+		request()
+			->user()
+			->tags()
+			->create(
+				request()->all()
+			);
 		return redirect('/tag');
 	}
 
-	public function destroy( Tag $tag ){
-		$tag->delete();
-		return redirect( '/tag' );
+	public function destroy(Tag $tag)
+	{
+		request()->user()->tags()->find($tag->id)->delete();
+		return redirect('/tag');
 	}
 }
