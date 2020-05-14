@@ -12,7 +12,7 @@ class LinkController extends Controller
 	public function create()
 	{
 		$subjects = Subject::orderBy('title')->get();
-		$tags = Tag::orderBy('name')->get();
+		$tags = request()->user()->tags()->orderBy('name')->get();
 		return view('link.create', compact('subjects', 'tags'));
 	}
 
@@ -36,7 +36,7 @@ class LinkController extends Controller
 
 	public function edit(Link $link)
 	{
-		$tags = Tag::orderBy('name')->get();
+		$tags = request()->user()->tags()->orderBy('name')->get();
 		return view('link.edit', compact('link', 'tags'));
 	}
 
